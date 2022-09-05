@@ -1,7 +1,7 @@
 This is a simple weather application created using ReactJS and  Weather API.
 
 
-This application have simple features like finding weather and forecast information using user's location or by search method.This applications tells us weather informatiion like Current temperature , Weather conditions  , Wind speed, Visibilty , Humidity , Maximum and Minimum temperatures , Sunrise , Sunset , Moonrise , Moonset timings.This application uses icons to show weather conditions and changes background imaages accordingly.
+This application have simple features like finding weather and forecast information using user's location or by search method.This application uses icons to show weather conditions and changes background images accordingly.
 
 
 This  application uses Weather API to fetch weather and forecast information and uses Ip Info API to fetch user's location.
