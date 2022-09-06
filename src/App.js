@@ -159,7 +159,11 @@ function App() {
     <div
       className="app"
       style={
-          placeInfo.condition?.toLowerCase() === "clear" || placeInfo.condition?.toLowerCase() === "sunny"
+        placeInfo.condition?.toLowerCase() === "sunny"
+        ? { backgroundImage: `url(${Sunny})` }
+          :placeInfo.condition?.toLowerCase() === "clear" && (placeInfo.current?.last_updated.slice(11,13) <6 || placeInfo.current?.last_updated.slice(11,13) >18) 
+          ? { backgroundImage: `url(${Night})` }
+          :placeInfo.condition?.toLowerCase() === "clear"
           ? { backgroundImage: `url(${Sunny})` }
           : placeInfo.condition?.toLowerCase().includes("cloudy") 
           ? { backgroundImage: `url(${Cloudy})` }
@@ -185,11 +189,13 @@ function App() {
       }>
 
      <nav>
+      <a href="/">
 
       <span className="webLogoAndName">
       <img src={Logo} alt="Website Logo Here" className="web-logo "/>
       <p className="web-name ">Weather</p>
       </span>
+      </a>
       <div className="search-box">
       <img className="location" src={Location} alt="Search By Location" onClick={handleLocationFetch} />
       <input className="search-input" type="text" value={place} onKeyPress={handleKeyPress} onChange = { (e) => setPlace(e.target.value) }/>

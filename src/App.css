@@ -10,9 +10,16 @@ nav {
     display: flex;
     padding: 1vw 0;
 }
+a{
+    text-decoration: none;
+    color: white;
+}
 .webLogoAndName{
     display: flex;
     margin-left:3%;
+}
+.webLogoAndName:hover{
+    cursor: pointer;
 }
 .web-logo{
     width: 50px;
@@ -21,6 +28,9 @@ nav {
 .web-name{
     color: white;
     font-size: 2.5vw;;
+}
+.web-name:hover{
+    opacity: .7;
 }
 .search-box{
     display: flex;
