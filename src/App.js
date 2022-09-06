@@ -167,7 +167,7 @@ function App() {
           ? { backgroundImage: `url(${Sunny})` }
           : placeInfo.condition?.toLowerCase().includes("cloudy") 
           ? { backgroundImage: `url(${Cloudy})` }
-          : placeInfo.condition?.toLowerCase().includes("cloudy") && (placeInfo.current?.last_updated.slice(11,13) <6 || placeInfo.current?.last_updated.slice(11,13) >18)  
+          : ( placeInfo.condition?.toLowerCase().includes("cloudy") || placeInfo.condition?.toLowerCase().includes("overcast"))  && (placeInfo.current?.last_updated.slice(11,13) <6 || placeInfo.current?.last_updated.slice(11,13) >18)  
           ? { backgroundImage: `url(${NightCloud})` }
           : placeInfo.condition?.toLowerCase().includes("rain") 
           ? { backgroundImage: `url(${Rainy})` }
