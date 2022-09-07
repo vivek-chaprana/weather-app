@@ -8,3 +8,11 @@ This  application uses Weather API to fetch weather and forecast information and
 
 This aplication is deployed on Netlify,  Link - https://weatherappbyvivek.netlify.app/ .
 
+
+## Usage
+
+```
+git clone https://github.com/Vicky2op/weather-app.git
+npm install
+npm start
+```
