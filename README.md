@@ -6,7 +6,7 @@ This application have simple features like finding weather and forecast informat
 
 This  application uses Weather API to fetch weather and forecast information and uses Ip Info API to fetch user's location.
 
-This aplication is deployed on Netlify,  Link - https://weatherappbyvivek.netlify.app/ .
+This aplication is deployed on Netlify,  Link - https://4cast4you.netlify.app/ .
 
 
 ## Usage
