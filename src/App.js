@@ -49,7 +49,7 @@ function App() {
   }
 // For fetching weather and forecast information using api
   const handleFetch = () => {
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=dd121b3483d14a19b3371928220209&q=${place}&days=1&aqi=no&alerts=no`)
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=72b144fb0aaa4f429b172538221809&q=${place}&days=1&aqi=no&alerts=no`)
     .then((response) => response.json())
     .then((data) => {setPlaceInfo({
       name : data.location.name,
