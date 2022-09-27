@@ -12,7 +12,7 @@ This aplication is deployed on Netlify,  Link - https://4cast4you.netlify.app/ .
 ## Usage
 
 ```
-git clone https://github.com/Vicky2op/weather-app.git
+git clone https://github.com/vivek-chaprana/weather-app.git
 npm install
 npm start
 ```
