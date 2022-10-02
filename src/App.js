@@ -49,7 +49,7 @@ function App() {
   }
 // For fetching weather and forecast information using api
   const handleFetch = () => {
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=72b144fb0aaa4f429b172538221809&q=${place}&days=1&aqi=no&alerts=no`)
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=794d31f389a84da6a7251334220210&q=${place}&days=1&aqi=no&alerts=no`)
     .then((response) => response.json())
     .then((data) => {setPlaceInfo({
       name : data.location.name,
@@ -323,7 +323,7 @@ function App() {
 
       </div>
       <footer className="footer">
-        <p>Copyright &copy; {year} <a href="https://twitter.com/Vickytooop" rel="noreferrer"  target="_blank">Vivek Chaprana</a>. All Rights Reserved. </p>
+        <p>Copyright &copy; {year} <a href="https://vivekchaprana.netlify.app/" rel="noreferrer"  target="_blank">Vivek Chaprana</a>. All Rights Reserved. </p>
       </footer>
 
 
