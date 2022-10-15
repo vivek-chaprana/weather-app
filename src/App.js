@@ -30,6 +30,7 @@ function App() {
 
   const [place , setPlace] = useState('New Delhi');
   const [placeInfo, setPlaceInfo] = useState({});
+  const ApiKey = process.env.REACT_APP_WEATHER_API_KEY;
 
   useEffect(() => {
     handleFetch();
@@ -49,7 +50,7 @@ function App() {
   }
 // For fetching weather and forecast information using api
   const handleFetch = () => {
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=794d31f389a84da6a7251334220210&q=${place}&days=1&aqi=no&alerts=no`)
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=${ApiKey}&q=${place}&days=1&aqi=no&alerts=no`)
     .then((response) => response.json())
     .then((data) => {setPlaceInfo({
       name : data.location.name,
