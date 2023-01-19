@@ -40,12 +40,13 @@ function App() {
 
     // eslint-disable-next-line
   }, []);
+
   // for fetching location information
   const handleLocationFetch = () => {
-    fetch("https://ipinfo.io/json?token=6ea71bc17590d9")
+    fetch(`https://ipinfo.io/json?token=6ea71bc17590d9`)
       .then((response) => response.json())
       .then((jsonResponse) => {
-        setPlace(jsonResponse.city);
+        setPlace(jsonResponse.city + " " + jsonResponse.country);
         handleFetch();
       });
   };
