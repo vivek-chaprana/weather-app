@@ -1,354 +1,371 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;1,600&family=Montserrat:wght@200;400;600&display=swap');
-.app{
-    transition-duration: 1s;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;1,600&family=Montserrat:wght@200;400;600&display=swap");
+.app {
+  transition-duration: 1s;
 }
-body{
-    font-family: 'Josefin Sans', sans-serif;
-    color: white;
+body {
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
 }
 nav {
-    display: flex;
-    padding: 1vw 0;
+  display: flex;
+  padding: 1vw 0;
 }
-a{
-    text-decoration: none;
-    color: white;
+a {
+  text-decoration: none;
+  color: white;
 }
-.webLogoAndName{
-    display: flex;
-    margin-left:3%;
+.webLogoAndName {
+  display: flex;
+  margin-left: 3%;
 }
-.webLogoAndName:hover{
-    cursor: pointer;
+.webLogoAndName:hover {
+  cursor: pointer;
 }
-.web-logo{
-    width: 50px;
-    height: 50px;
+.web-logo {
+  width: 50px;
+  height: 50px;
 }
-.web-name{
-    color: white;
-    font-size: 2.5vw;;
+.web-name {
+  color: white;
+  font-size: 2.5vw;
 }
-.web-name:hover{
-    opacity: .7;
+.web-name:hover {
+  opacity: 0.7;
 }
-.search-box{
-    display: flex;
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    border-left: 0px solid rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(1px);
-    margin: 0 3% 0 auto;
+.search-box {
+  display: flex;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 0px solid rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(1px);
+  margin: 0 3% 0 auto;
 }
-.location{
-    width: 32px;
-    filter: invert(1);
-    border-right: 1px solid black;
-    border-left: 1px solid black;
-    border-radius: 12px;
-    padding: 1% 5%;
+.location {
+  width: 32px;
+  filter: invert(1);
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-radius: 12px;
+  padding: 1% 5%;
 }
-.location:hover{
-    cursor: pointer;
-    filter: invert(.5);
+.location:hover {
+  cursor: pointer;
+  filter: invert(0.5);
 }
-.search-input{
-    padding: 5px;
-    border: none;
-    outline: none;
-    color: white;
-    background: transparent;
-    width: 100%;
+.search-input {
+  padding: 5px;
+  border: none;
+  outline: none;
+  color: white;
+  background: transparent;
+  width: 100%;
 }
 .search-input::placeholder {
-    color: white;
-  }
-.search-button{
-    color:rgba(255, 255, 255, .7);
-    width: 7%;
-    filter : invert(1);
-    display: flex;
-    margin:0 2% 0 auto;
+  color: white;
+}
+.search-button {
+  color: rgba(255, 255, 255, 0.7);
+  width: 7%;
+  filter: invert(1);
+  display: flex;
+  margin: 0 2% 0 auto;
 }
 .search-button:hover {
-    transform: scale(1.2);
-    filter: invert(.5);
-    cursor: pointer;
-  }
-.weather-container{
-    padding: 0;
-    width: clamp(50%,800px,90%);
-    margin: 3vw auto;
+  transform: scale(1.2);
+  filter: invert(0.5);
+  cursor: pointer;
 }
-.place-details{
-    display: flex;
-    width: 100%;
-    height: 10%;
-    justify-content: center;
-    align-items: flex-end;
+.weather-container {
+  padding: 0;
+  width: clamp(50%, 800px, 90%);
+  margin: 3vw auto;
 }
-.place-details h2{
-    font-weight: 400;
+.place-details {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  justify-content: center;
+  align-items: flex-end;
 }
-.place-details h3{
-    font-weight: 300;
+.place-details h2 {
+  font-weight: 400;
 }
-.current-temp{
-    padding-top: 1vw;
-    display:flex;
-    width: 100%;
-    justify-content: center;
+.place-details h3 {
+  font-weight: 300;
 }
-.logoAndTemp{
-    display: flex;
-    font: 600;
-    font-size:40px;
+.current-temp {
+  padding-top: 1vw;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.logoAndTemp {
+  display: flex;
+  font: 600;
+  font-size: 40px;
 }
 
-
-.cOrF
-{
-    font-size: 30px;
-    padding: 0 2%;
+.cOrF {
+  font-size: 30px;
+  padding: 0 2%;
 }
-.active , .not-active{
-    padding: 5px;
+.active,
+.not-active {
+  padding: 5px;
 }
-.not-active{
-    opacity: .5;
+.not-active {
+  opacity: 0.5;
 }
-.not-active:hover , .active:hover{
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(1px);
+.not-active:hover,
+.active:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(1px);
 }
-.condition-container{
-    display: flex;
-    justify-content: center;
+.condition-container {
+  display: flex;
+  justify-content: center;
 }
-.condition-container p{
-    font-weight: 300;
-    font-size:2.5vw;
+.condition-container p {
+  font-weight: 300;
+  font-size: 2.5vw;
 }
-.time-cont{
-    display: flex;
-    justify-content: center;
+.time-cont {
+  display: flex;
+  justify-content: center;
 }
 .time-cont p {
-    font-weight: 200;
+  font-weight: 200;
 }
-.extra-details{
-    padding-top:2%;
-    display: flex;
+.extra-details {
+  padding-top: 2%;
+  display: flex;
 }
-.forDiv{
-    display: flex;
-    width: 50%;
-    justify-content:space-evenly;
+.forDiv {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
 }
-.forDiv p{
-    font-size:1.1vw;
+.forDiv p {
+  font-size: 1.1vw;
 }
-.tittle-day-details{
-    font-weight: 350;
-    font-size:24px;
-    padding-top:5%
+.tittle-day-details {
+  font-weight: 350;
+  font-size: 24px;
+  padding-top: 5%;
 }
-.day-details{
-    display: flex;
-    justify-content: space-between;
-    padding: 3% 2%;
+.day-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 3% 2%;
 }
-.highAndLow{
-    max-width: 300px; 
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 5px;
-    padding: 1vw 0;
+.highAndLow {
+  max-width: 300px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 1vw 0;
 }
-.highAndLow h4{
-    font-weight: 400;
-    font-size: 20px;
-    padding-top: 6%;
+.highAndLow h4 {
+  font-weight: 400;
+  font-size: 20px;
+  padding-top: 6%;
 }
 .highAndLow p {
-    font-weight:300;
-    font-size: 18px;
-    padding-top: 2%;
+  font-weight: 300;
+  font-size: 18px;
+  padding-top: 2%;
 }
-.sun , .moon{
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 5px;
-    padding : 0 1vw 1.5vw 1vw;
+.sun,
+.moon {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 0 1vw 1.5vw 1vw;
 }
-.moon h4 , .sun h4{
-    padding-top:2vw;
+.moon h4,
+.sun h4 {
+  padding-top: 2vw;
 }
-.sunrise , .sunset , .moonrise , .moonset{
-    display:flex;
-    align-items:center;
-    padding-top: .6vw;
-    font-weight: 300;
-    font-size: 18px;
+.sunrise,
+.sunset,
+.moonrise,
+.moonset {
+  display: flex;
+  align-items: center;
+  padding-top: 0.6vw;
+  font-weight: 300;
+  font-size: 18px;
 }
-.sunrise img , .sunset img , .moonrise img , .moonset img{
-    padding-right : 1vw;
+.sunrise img,
+.sunset img,
+.moonrise img,
+.moonset img {
+  padding-right: 1vw;
 }
-.icon{
-    width:44px;
-    filter: invert(1);
+.icon {
+  width: 44px;
+  filter: invert(1);
 }
-.graphs{
-    display: flex;
-    width: 100%;
-    justify-content:space-between;
+.graphs {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
-.precip, .uv, .humidity{
-    width: 30%;
-    align-items:center;
+.precip,
+.uv,
+.humidity {
+  width: 30%;
+  align-items: center;
 }
-.precip h4 , .uv h4 , .humidity h4{
-    text-align: center;
-    font-size:20px;
-    font-weight: 400;
-    padding: 2% 0 6% 0;
+.precip h4,
+.uv h4,
+.humidity h4 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 2% 0 6% 0;
 }
-.newDiv{
-    display: flex;
-    justify-content:center;
+.newDiv {
+  display: flex;
+  justify-content: center;
 }
-.circ{
-    width: 70%;
+.circ {
+  width: 70%;
 }
 .CircularProgressbar-text {
-    font-weight: 300;
-    
+  font-weight: 300;
 }
-.uv-index-sizes{
-    font-size: 20px;
+.uv-index-sizes {
+  font-size: 20px;
 }
-.uv-index-indicator{
-    font-weight: 400 ;
-    padding-top: 5% ;
+.uv-index-indicator {
+  font-weight: 400;
+  padding-top: 5%;
 }
-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(1px);
-    min-height: 40px;
-    
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(1px);
+  min-height: 40px;
 }
 footer a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
-footer a:hover{
-    color: rgba(255, 255, 255, 0.5);
+footer a:hover {
+  color: rgba(255, 255, 255, 0.5);
 }
 
-  @media only screen and (max-width: 600px) {
-    nav{
-        padding:3% 1%;
-    }
-    .webLogoAndName{
-        margin-left:1%
-    }
-    .web-logo{
-        width:13vw;
-        padding-left: 2%;
-    }
-    .web-name {
-        display: none;
-    }
-    .search-box{
-        margin-right: 1%;
-        width:50%;
-    }
-    .location{
-        width:15%;
-    }
-    .search-input{
-        width:50%;
-    }
-    .search-button{
-        width:7vw;
-        padding: 0 2% 0 1%;
-
-    }
-    .logoAndTemp img{
-        width:auto;
-        height:auto;
-        max-width:64px;
-    }
-    .day-details{
-        display: block;
-    }
-    .sunrise img , .sunset img , .moonrise img , .moonset img{
-        padding-right : 3vw;
-    }
-    .extra-details{
-        display: flex;
-        justify-content: space-between;
-        margin: 2% 7%;
-    }
-    .forDiv{
-        display: block;
-    }
-    .forDiv p {
-        font-size:16px;
-        padding: 2%;
-    }
-    .condition-container p{
-        font-size:32px;
-    }
-    .highAndLow{
-        border-bottom: none;
-    }
-    .moon{
-        border-top: none;
-    }
-    .sun{
-        border-radius: 0;
-    }
-    .graphs{
-        display: block;
-    }
-    .precip,.uv,.humidity{
-        display:flex;
-        width: 100%;
-        justify-content:space-between;
-        padding: 5% 0 2.5% 0;
-    }
-    .newDiv{
-        display:flex;
-        justify-content:flex-start;
-        width: 50%;
-    }
-    .precip h4 , .uv h4 , .humidity h4{
-        padding: 0 0 0 3%;
-    }
-    .uv-index-indicator{
-        font-size: 16px;
-    }
-    .footer a, footer p{
-        font-size:3.5vw;
-    }
+@media only screen and (max-width: 600px) {
+  nav {
+    padding: 3% 1%;
   }
-  @media only screen and (max-width: 820px) and (min-width: 600px) {
-    .web-name {
-        font-size:3vw;
-        padding-top:2vw;
-    }
-    .condition-container p{
-        font-size:5vw;
-    }
-    .forDiv p {
-        font-size:2vw;;
-        padding: 2%;
-    }
+  .webLogoAndName {
+    margin-left: 1%;
   }
+  .web-logo {
+    width: 13vw;
+    padding-left: 2%;
+  }
+  .web-name {
+    display: none;
+  }
+  .search-box {
+    margin-right: 1%;
+    width: 50%;
+  }
+  .location {
+    width: 15%;
+  }
+  .search-input {
+    width: 50%;
+  }
+  .search-button {
+    width: 7vw;
+    padding: 0 2% 0 1%;
+  }
+  .logoAndTemp img {
+    width: auto;
+    height: auto;
+    max-width: 64px;
+  }
+  .day-details {
+    display: block;
+  }
+  .sunrise img,
+  .sunset img,
+  .moonrise img,
+  .moonset img {
+    padding-right: 3vw;
+  }
+  .extra-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 7%;
+  }
+  .forDiv {
+    display: block;
+  }
+  .forDiv p {
+    font-size: 16px;
+    padding: 2%;
+  }
+  .condition-container p {
+    font-size: 32px;
+  }
+  .highAndLow {
+    border-bottom: none;
+  }
+  .moon {
+    border-top: none;
+  }
+  .sun {
+    border-radius: 0;
+  }
+  .graphs {
+    display: block;
+  }
+  .precip,
+  .uv,
+  .humidity {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 5% 0 2.5% 0;
+  }
+  .newDiv {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+  }
+  .precip h4,
+  .uv h4,
+  .humidity h4 {
+    padding: 0 0 0 3%;
+  }
+  .uv-index-indicator {
+    font-size: 16px;
+  }
+  .footer a,
+  footer p {
+    font-size: 3.5vw;
+  }
+}
+@media only screen and (max-width: 820px) and (min-width: 600px) {
+  .web-name {
+    font-size: 3vw;
+    padding-top: 2vw;
+  }
+  .condition-container p {
+    font-size: 5vw;
+  }
+  .forDiv p {
+    font-size: 2vw;
+    padding: 2%;
+  }
+}

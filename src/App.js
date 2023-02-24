@@ -31,8 +31,10 @@ import Rainy from "./assets/rainy.jpg";
 
 function App() {
   const [place, setPlace] = useState("New Delhi");
+  const [uvCondition, setUvCondition] = useState("Normal");
   const [placeInfo, setPlaceInfo] = useState({});
-  const ApiKey = process.env.REACT_APP_WEATHER_API_KEY;
+  const WeatherApiKey = process.env.REACT_APP_WEATHER_API_KEY;
+  const LocationApiKey = process.env.REACT_APP_LOCATION_KEY;
 
   useEffect(() => {
     handleFetch();
@@ -43,7 +45,7 @@ function App() {
 
   // for fetching location information
   const handleLocationFetch = () => {
-    fetch(`https://ipinfo.io/json?token=6ea71bc17590d9`)
+    fetch(`https://ipinfo.io/json?token=${LocationApiKey}`)
       .then((response) => response.json())
       .then((jsonResponse) => {
         setPlace(jsonResponse.city + " " + jsonResponse.country);
@@ -53,7 +55,7 @@ function App() {
   // For fetching weather and forecast information using api
   const handleFetch = () => {
     fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${ApiKey}&q=${place}&days=1&aqi=no&alerts=no`
+      `http://api.weatherapi.com/v1/forecast.json?key=${WeatherApiKey}&q=${place}&days=1&aqi=no&alerts=no`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -91,12 +93,6 @@ function App() {
           avgHumidity: data.forecast.forecastday[0].day.avghumidity,
         });
 
-        setCurrentTemp(data.current?.temp_c);
-        setFeelsLike(data.current?.feelslike_c);
-        setWind(data.current?.wind_kph);
-        setVis(data.current?.vis_km);
-        setMax(data.forecast.forecastday[0].day.maxtemp_c);
-        setMin(data.forecast.forecastday[0].day.mintemp_c);
         let uvCond =
           data.forecast.forecastday[0].day.uv < 3
             ? "Low"
@@ -110,46 +106,63 @@ function App() {
               data.forecast.forecastday[0].day.uv > 7
             ? "Very High"
             : "Extreme";
+
+        setTempDetails({
+          currentTemp: data.current?.temp_c,
+          feelslike: data.current?.feelslike_c,
+          wind: data.current?.wind_kph,
+          vis: data.current?.vis_km,
+          max: data.forecast.forecastday[0].day.maxtemp_c,
+          min: data.forecast.forecastday[0].day.mintemp_f,
+          unit: "km",
+          cActive: "active",
+          fActive: "not-active",
+        });
         setUvCondition(uvCond);
       });
   };
 
-  const [currentTemp, setCurrentTemp] = useState(placeInfo.current?.current_c);
-  const [feelslike, setFeelsLike] = useState(placeInfo.current?.feelslike_c);
-  const [wind, setWind] = useState(placeInfo.current?.wind_kph);
-  const [vis, setVis] = useState(placeInfo.current?.vis_km);
-  const [max, setMax] = useState(placeInfo.today?.maxtemp_c);
-  const [min, setMin] = useState(placeInfo.today?.mintemp_c);
-  const [cActive, setCActive] = useState("active");
-  const [fActive, setfActive] = useState("not-active");
-  const [unit, setUnit] = useState("km");
+  // Storing temp data
+  const [tempDetails, setTempDetails] = useState({
+    currentTemp: placeInfo.current?.current_c,
+    feelslike: placeInfo.current?.feelslike_c,
+    wind: placeInfo.current?.wind_kph,
+    vis: placeInfo.current?.vis_km,
+    max: placeInfo.today?.maxtemp_c,
+    min: placeInfo.today?.mintemp_c,
+    unit: "km",
+    cActive: "active",
+    fActive: "not-active",
+  });
 
   // For changing to C everywhere
   const changeToC = () => {
-    setCurrentTemp(placeInfo.current?.current_c);
-    setFeelsLike(placeInfo.current?.feelslike_c);
-    setWind(placeInfo.current?.wind_kph);
-    setVis(placeInfo.current?.vis_km);
-    setMax(placeInfo.today?.maxtemp_c);
-    setMin(placeInfo.today?.mintemp_c);
-    setCActive("active");
-    setfActive("not-active");
-    setUnit("km");
+    setTempDetails({
+      currentTemp: placeInfo.current?.current_c,
+      feelslike: placeInfo.current?.feelslike_c,
+      wind: placeInfo.current?.wind_kph,
+      vis: placeInfo.current?.vis_km,
+      max: placeInfo.today?.maxtemp_c,
+      min: placeInfo.today?.mintemp_c,
+      unit: "km",
+      cActive: "active",
+      fActive: "not-active",
+    });
   };
   // For changing C to F everywhere
   const changeToF = () => {
-    setCurrentTemp(placeInfo.current?.current_f);
-    setFeelsLike(placeInfo.current?.feelslike_f);
-    setWind(placeInfo.current?.wind_mph);
-    setVis(placeInfo.current?.vis_miles);
-    setMax(placeInfo.today?.maxtemp_f);
-    setMin(placeInfo.today?.mintemp_f);
-    setCActive("not-active");
-    setfActive("active");
-    setUnit("miles");
+    setTempDetails({
+      currentTemp: placeInfo.current?.current_f,
+      feelslike: placeInfo.current?.feelslike_f,
+      wind: placeInfo.current?.wind_mph,
+      vis: placeInfo.current?.vis_miles,
+      max: placeInfo.today?.maxtemp_f,
+      min: placeInfo.today?.mintemp_f,
+      unit: "miles",
+      cActive: "not-active",
+      fActive: "active",
+    });
   };
-
-  const [uvCondition, setUvCondition] = useState("Normal");
 
   // Getting year for footer
   let date = new Date();
@@ -250,15 +263,15 @@ function App() {
         <div className="current-temp">
           <div className="logoAndTemp">
             <img src={placeInfo.icon} alt="img here" />
-            <h1>{currentTemp} </h1>
+            <h1>{tempDetails.currentTemp} </h1>
             <h1>&deg;</h1>
           </div>
 
           <div className="cOrF">
-            <div className={cActive} onClick={changeToC}>
+            <div className={tempDetails.cActive} onClick={changeToC}>
               C
             </div>
-            <div className={fActive} onClick={changeToF}>
+            <div className={tempDetails.fActive} onClick={changeToF}>
               F
             </div>
           </div>
@@ -271,14 +284,14 @@ function App() {
         </div>
         <div className="extra-details">
           <div className="forDiv">
-            <p>Feels like {feelslike}&deg;</p>
+            <p>Feels like {tempDetails.feelslike}&deg;</p>
             <p>
-              Wind {wind} {unit}/h
+              Wind {tempDetails.wind} {tempDetails.unit}/h
             </p>
           </div>
           <div className="forDiv">
             <p>
-              Visibility {vis} {unit}
+              Visibility {tempDetails.vis} {tempDetails.unit}
             </p>
             <p>Humidity {placeInfo.current?.humidity}%</p>
           </div>
@@ -288,9 +301,14 @@ function App() {
         <div className="day-details">
           <div className="highAndLow">
             <h4>Day</h4>
-            <p>There will be mostly sunny skies.The high will be {max}&deg;.</p>
+            <p>
+              There will be mostly sunny skies.The high will be{" "}
+              {tempDetails.max}&deg;.
+            </p>
             <h4>Night</h4>
-            <p>The skies will be clear. The low will be {min}&deg;.</p>
+            <p>
+              The skies will be clear. The low will be {tempDetails.min}&deg;.
+            </p>
           </div>
           <div className="sun">
             <h4>SUNRISE</h4>
